@@ -1,10 +1,9 @@
 "use server";
 import { getUserById } from "@/data/user";
 import { db } from "@/lib/db";
-import { AddSupportLinkForm } from "@/schemas";
-import * as z from "zod";
+import { AddSupportLinkForm, AddSupportLinkFormType } from "@/schemas";
 
-export const addLink = async (values: z.infer<typeof AddSupportLinkForm>) => {
+export const addLink = async (values: AddSupportLinkFormType) => {
   const validatedFields = AddSupportLinkForm.safeParse(values);
 
   if (!validatedFields.success) {

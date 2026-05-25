@@ -565,3 +565,5 @@ export const AddSupportLinkForm = z.object({
     message: "Please enter the support link",
   }),
 });
+
+export type AddSupportLinkFormType = z.infer<typeof AddSupportLinkForm>;
